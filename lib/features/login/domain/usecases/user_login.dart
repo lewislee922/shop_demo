@@ -1,11 +1,20 @@
 import 'package:shop_demo/features/login/presentation/bloc/login_bloc.dart';
 
-/* class UserLogin {
-  final LoginRepository repository;
+import '../repositories/user_login_repository.dart';
+
+class UserLogin {
+  final UserLoginRepository repository;
 
   UserLogin(this.repository);
 
-  login() {
-    return repository.userLogin();
+  Future<String> login(String username, String password) async {
+    try {
+      final _result = await repository.login(username, password);
+      return _result;
+    } catch (e) {
+      rethrow;
+    }
   }
-} */
+
+  Future<bool> logout() => repository.logout();
+}

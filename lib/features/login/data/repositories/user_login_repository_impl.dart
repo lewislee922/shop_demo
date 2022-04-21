@@ -5,14 +5,17 @@ class UserLoginRepositoryImpl implements UserLoginRepository {
   final LoginRemoteDataSource dataSource;
   UserLoginRepositoryImpl(this.dataSource);
   @override
-  login() {
-    // TODO: implement login
-    throw UnimplementedError();
+  Future<String> login(String username, String password) async {
+    try {
+      final _result = await dataSource.userLogin(username, password);
+      return _result;
+    } catch (e) {
+      rethrow;
+    }
   }
 
   @override
-  logout() {
-    // TODO: implement logout
-    throw UnimplementedError();
+  Future<bool> logout() async {
+    return await dataSource.userLogout();
   }
 }

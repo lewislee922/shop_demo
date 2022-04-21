@@ -23,9 +23,3 @@ class LoginFailure extends LoginState {
 }
 
 class LoginProcessing extends LoginState {}
-
-class LoginError extends LoginState {
-  final String message;
-
-  const LoginError(this.message);
-}
