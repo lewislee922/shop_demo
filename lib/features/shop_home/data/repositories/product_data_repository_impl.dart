@@ -1,4 +1,3 @@
-import 'package:http/http.dart';
 import 'package:shop_demo/core/error/failure.dart';
 import 'package:shop_demo/features/shop_home/data/datasources/product_remote_data_source.dart';
 import 'package:shop_demo/features/shop_home/domain/entities/product.dart';

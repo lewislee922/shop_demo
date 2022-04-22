@@ -11,7 +11,7 @@ class LogInEvent extends AuthEvent {
   final String username;
   final String password;
 
-  LogInEvent(this.username, this.password);
+  const LogInEvent(this.username, this.password);
 }
 
 class LogOutEvnet extends AuthEvent {}

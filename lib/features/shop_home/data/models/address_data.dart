@@ -3,7 +3,7 @@ import 'package:shop_demo/features/shop_home/domain/entities/address.dart';
 import 'package:shop_demo/features/shop_home/domain/entities/geolocation.dart';
 
 class AddressData extends Address {
-  AddressData(String city, String street, int number, String zipcode,
+  const AddressData(String city, String street, int number, String zipcode,
       Geolocation geolocation)
       : super(city, street, number, zipcode, geolocation);
 

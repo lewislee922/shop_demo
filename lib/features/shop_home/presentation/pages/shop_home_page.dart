@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -21,7 +19,7 @@ class ShopHomePage extends ConsumerWidget {
     final size = MediaQuery.of(context).size;
     return BlocBuilder<ShopHomeBloc, ShopHomeState>(
         bloc: ref.watch<ShopHomeBloc>(productBloc)
-          ..add(fetchProductEvent(parameters)),
+          ..add(FetchProductEvent(parameters)),
         builder: (context, state) {
           if (state is ShopHomeFinish) {
             final user = state.data['user'] as User;
@@ -30,8 +28,8 @@ class ShopHomePage extends ConsumerWidget {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                   actions: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.shopping_cart,
                         color: Colors.black,
@@ -53,7 +51,7 @@ class ShopHomePage extends ConsumerWidget {
                             parameters['getAll'] = false;
                             ref
                                 .read<ShopHomeBloc>(productBloc)
-                                .add(fetchProductEvent(parameters));
+                                .add(FetchProductEvent(parameters));
                           });
                     }),
                   ),

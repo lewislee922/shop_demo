@@ -34,7 +34,7 @@ void main() {
         when(userLogin.login(any, any)).thenAnswer((_) async => "qoo");
         return LoginBloc(userLogin);
       },
-      act: (bloc) => bloc.add(LogInEvent("acc", "test1")),
+      act: (bloc) => bloc.add(const LogInEvent("acc", "test1")),
       expect: () => [LoginProcessing(), const LoginSuccess("qoo")],
     );
 
@@ -44,7 +44,7 @@ void main() {
         when(userLogin.login(any, any)).thenThrow(AuthorizedFailure());
         return LoginBloc(userLogin);
       },
-      act: (bloc) => bloc.add(LogInEvent("acc", "test1")),
+      act: (bloc) => bloc.add(const LogInEvent("acc", "test1")),
       expect: () => [
         LoginProcessing(),
         const LoginFailure("No username or incorrect password")
@@ -57,7 +57,7 @@ void main() {
         when(userLogin.login(any, any)).thenThrow(NetworkFailure());
         return LoginBloc(userLogin);
       },
-      act: (bloc) => bloc.add(LogInEvent("acc", "test1")),
+      act: (bloc) => bloc.add(const LogInEvent("acc", "test1")),
       expect: () => [
         LoginProcessing(),
         const LoginFailure("Network error, please check your network status")

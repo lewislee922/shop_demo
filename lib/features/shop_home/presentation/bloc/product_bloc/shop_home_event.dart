@@ -7,8 +7,8 @@ abstract class ShopHomeEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class fetchProductEvent extends ShopHomeEvent {
+class FetchProductEvent extends ShopHomeEvent {
   final Map<String, dynamic> parameters;
 
-  const fetchProductEvent(this.parameters);
+  const FetchProductEvent(this.parameters);
 }

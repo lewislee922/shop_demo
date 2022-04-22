@@ -11,7 +11,7 @@ class ShopHomeBloc extends Bloc<ShopHomeEvent, ShopHomeState> {
   final UserDataRepository userRepository;
   ShopHomeBloc(this.userRepository, this.productRepository)
       : super(ShopHomeInitial()) {
-    on<fetchProductEvent>((event, emit) async {
+    on<FetchProductEvent>((event, emit) async {
       emit(ShopHomeLoading());
       final _parameter = event.parameters;
       try {

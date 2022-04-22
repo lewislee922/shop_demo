@@ -14,7 +14,8 @@ class UserData extends User {
 }
 
 class NameData extends Name {
-  NameData(String firstName, String lastName) : super(firstName, lastName);
+  const NameData(String firstName, String lastName)
+      : super(firstName, lastName);
 
   factory NameData.fromJson(Map<String, dynamic> json) =>
       NameData(json['firstname'], json['lastname']);

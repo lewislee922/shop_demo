@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ShopHomeShimmerView extends StatelessWidget {
-  static final gradient = LinearGradient(
+  static const gradient = LinearGradient(
     colors: [
       Color(0xFFEBEBF4),
       Color(0xFFF4F4F4),
@@ -27,11 +27,11 @@ class ShopHomeShimmerView extends StatelessWidget {
       appBar: AppBar(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
-          actions: [
+          actions: const [
             Shimmer(
               gradient: gradient,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8.0),
                 child: Icon(
                   Icons.shopping_cart,
                   color: Colors.black,
@@ -62,7 +62,7 @@ class ShopHomeShimmerView extends StatelessWidget {
                           fit: BoxFit.scaleDown,
                           child: Text(
                             "Loading".toUpperCase(),
-                            style: TextStyle(color: Colors.black),
+                            style: const TextStyle(color: Colors.black),
                           ),
                         )),
                   ),
@@ -82,7 +82,8 @@ class ShopHomeShimmerView extends StatelessWidget {
                   (_) => Card(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: const [
                             Icon(Icons.shopping_basket),
                             SizedBox(height: 16.0),
                             Text('loading')

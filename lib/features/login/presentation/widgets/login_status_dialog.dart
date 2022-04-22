@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 class LoginStatusDialog extends StatelessWidget {
@@ -41,7 +39,7 @@ class LoginStatusDialog extends StatelessWidget {
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           primary: Colors.black,
-                          textStyle: TextStyle(color: Colors.white)),
+                          textStyle: const TextStyle(color: Colors.white)),
                       onPressed: () => Navigator.pop(context),
                       child: const Text("Back"))
                 ],

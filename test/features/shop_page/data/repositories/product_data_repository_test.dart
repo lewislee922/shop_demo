@@ -73,7 +73,7 @@ void main() {
     });
 
     test("should get products with filtered category", () async {
-      final cateogryString = "jewelry";
+      const cateogryString = "jewelry";
       productRemoteDataSource = MockProductRemoteDataSource();
       repository = ProductDataRepositoryImpl(productRemoteDataSource);
       when(repository.getProducts(false, cateogryString)).thenAnswer(

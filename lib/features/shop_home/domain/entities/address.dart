@@ -8,7 +8,8 @@ class Address extends Equatable {
   final String zipcode;
   final Geolocation geolocation;
 
-  Address(this.city, this.street, this.number, this.zipcode, this.geolocation);
+  const Address(
+      this.city, this.street, this.number, this.zipcode, this.geolocation);
 
   @override
   List<Object?> get props => [null];

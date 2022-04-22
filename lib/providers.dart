@@ -2,7 +2,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart';
 import 'package:shop_demo/features/login/data/datasources/login_remote_datasource.dart';
 import 'package:shop_demo/features/login/data/repositories/user_login_repository_impl.dart';
-import 'package:shop_demo/features/login/domain/repositories/user_login_repository.dart';
 import 'package:shop_demo/features/login/domain/usecases/user_login.dart';
 import 'package:shop_demo/features/login/presentation/bloc/login_bloc.dart';
 import 'package:shop_demo/features/shop_home/data/datasources/product_remote_data_source.dart';

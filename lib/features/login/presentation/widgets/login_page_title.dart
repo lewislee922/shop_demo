@@ -32,7 +32,7 @@ class LoginPageTitle extends StatelessWidget {
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: const [
           Text(
             "Sign In",
             style: TextStyle(fontSize: 36.0, color: Colors.white),

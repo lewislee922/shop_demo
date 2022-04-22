@@ -41,7 +41,7 @@ class _LoginPageState extends ConsumerState<LoginPage>
   void initState() {
     super.initState();
     _animationController = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1500));
+        vsync: this, duration: const Duration(milliseconds: 1500));
     circlePositionRate = _generatePositionRate(0.1, 0.5, 0.1);
     titlePositionRate = _generatePositionRate(0.2, 0.4, 0.01);
     textFieldPositionRate = _generatePositionRate(0.3, 0.5, 0.01);
@@ -107,7 +107,7 @@ class _LoginPageState extends ConsumerState<LoginPage>
                   const Divider(thickness: 2.0),
                   TextField(
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           hintText: "Password",
                           contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
                           border: InputBorder.none),
@@ -140,7 +140,7 @@ class _LoginPageState extends ConsumerState<LoginPage>
                         context: context,
                         builder: (context) {
                           if (username == "" || password == "") {
-                            return LoginStatusDialog(
+                            return const LoginStatusDialog(
                                 title: "Error",
                                 message:
                                     "Please enter your username and password");

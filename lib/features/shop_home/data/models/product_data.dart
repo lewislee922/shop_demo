@@ -1,7 +1,7 @@
 import 'package:shop_demo/features/shop_home/domain/entities/product.dart';
 
 class ProductData extends Product {
-  ProductData(int id, String title, double price, String category,
+  const ProductData(int id, String title, double price, String category,
       String description, String image)
       : super(id, title, price, category, description, image);
 

@@ -17,9 +17,8 @@ class Name extends Equatable {
   final String firstName;
   final String lastName;
 
-  Name(this.firstName, this.lastName);
+  const Name(this.firstName, this.lastName);
 
   @override
-  // TODO: implement props
-  List<Object?> get props => [null];
+  List<Object?> get props => [];
 }
