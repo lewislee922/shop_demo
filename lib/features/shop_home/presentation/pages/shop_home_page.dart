@@ -35,36 +35,45 @@ class ShopHomePage extends ConsumerWidget {
                         color: Colors.black,
                       ),
                     ),
-                    CircleAvatar(child: Text(user.name.firstName)),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(child: Text(user.name.firstName)),
+                    ),
                   ]),
-              body: ListView(
-                children: [
-                  SizedBox(
-                    height: size.height * 0.05,
-                    child: StatefulBuilder(builder: (context, viewState) {
-                      return CategoryListView(
-                          categories: state.data['category'] ?? <String>[],
-                          selected: parameters['category'] ?? "",
-                          onTap: (value) {
-                            parameters['category'] = value;
-                            viewState(() => parameters['category']);
-                            parameters['getAll'] = false;
-                            ref
-                                .read<ShopHomeBloc>(productBloc)
-                                .add(FetchProductEvent(parameters));
-                          });
-                    }),
-                  ),
-                  const SizedBox(height: 16.0),
-                  ProductGridView(
-                    products: state.data['products'] ?? <ProductData>[],
-                  )
-                ],
+              body: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListView(
+                  children: [
+                    SizedBox(
+                      height: size.height * 0.05,
+                      child: StatefulBuilder(builder: (context, viewState) {
+                        return CategoryListView(
+                            categories: state.data['category'] ?? <String>[],
+                            selected: parameters['category'] ?? "",
+                            onTap: (value) {
+                              parameters['category'] = value;
+                              viewState(() => parameters['category']);
+                              parameters['getAll'] = false;
+                              ref
+                                  .read<ShopHomeBloc>(productBloc)
+                                  .add(FetchProductEvent(parameters));
+                            });
+                      }),
+                    ),
+                    const SizedBox(height: 16.0),
+                    ProductGridView(
+                      products: state.data['products'] ?? <ProductData>[],
+                    )
+                  ],
+                ),
               ),
               drawer: Container(),
             );
           }
-          return const ShopHomeShimmerView();
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const ShopHomeShimmerView(),
+          );
         });
   }
 }

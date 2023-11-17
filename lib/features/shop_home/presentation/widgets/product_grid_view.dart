@@ -14,18 +14,30 @@ class ProductGridView extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         children: products
             .map((e) => Card(
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: Image.network(
-                          e.image,
-                          fit: BoxFit.fitWidth,
-                        ),
+                  clipBehavior: Clip.hardEdge,
+                  child: LayoutBuilder(builder: (context, constraints) {
+                    final maxHeight = constraints.maxHeight;
+
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(
+                            height: maxHeight * 0.5,
+                            child: Image.network(
+                              e.image,
+                              fit: BoxFit.fitHeight,
+                            ),
+                          ),
+                          const SizedBox(height: 16.0),
+                          Expanded(
+                              child: Text(e.title,
+                                  maxLines: 3, overflow: TextOverflow.ellipsis))
+                        ],
                       ),
-                      const SizedBox(height: 16.0),
-                      Text(e.title)
-                    ],
-                  ),
+                    );
+                  }),
                 ))
             .toList());
   }
